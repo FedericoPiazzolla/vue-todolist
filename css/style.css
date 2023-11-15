@@ -12,7 +12,18 @@
 /* INPUTS */
 .inputs {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs > button {
+  margin: 2rem 0;
+  padding: .6rem 1.4rem;
+  border-radius: 2rem;
+  border: none;
+  border: 2px solid black;
+  background-color: blue;
+  color: white;
 }
 
 #toDoIn {
@@ -30,7 +41,7 @@
   /* OUTPUTS */
 .list-group {
   list-style-type: none;
-  margin-top: 15rem;
+  margin-top: 8rem;
 }
 
 .list-group > li {
