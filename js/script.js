@@ -22,5 +22,12 @@ createApp({
     deleteGoal: function(index) {
       this.toDoList.splice(index, 1);
     },
+    doneOrNotDone: function(index) {
+      if(this.toDoList[index].done === false) {
+        this.toDoList[index].done = true;
+      } else {
+        this.toDoList[index].done = false;
+      }
+    },
   }
 }).mount("#app")

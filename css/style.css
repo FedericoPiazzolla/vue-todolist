@@ -44,7 +44,7 @@
 }
 
 .done {
-  text-decoration: overline;
+  text-decoration: line-through;
 }
 
 .list-group > li {
