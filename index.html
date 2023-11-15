@@ -36,13 +36,16 @@
       <!-- Output -->
       <div class="outputs">
         <ul class="list-group">
-          <li v-for="(item, index) in ToDoList" :key="index">
+          <li v-for="(item, index) in toDoList" :key="index">
+
             <p class="list-content">
-              {{ ToDoList[index].text }}
+              {{ toDoList[index].text }}
             </p>
-            <button class="eliminate">
+
+            <button class="eliminate" @click="deleteGoal(index)">
               <i class="fa-solid fa-trash"></i>
             </button>
+            
           </li>
         </ul>
       </div>
