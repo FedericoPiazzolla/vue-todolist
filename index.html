@@ -21,18 +21,28 @@
       <!-- Input -->
       <div class="inputs">
         <label for="toDoIn"></label>
-        <input id="toDoIn" type="text">
+        <input 
+        id="toDoIn" 
+        type="text"
+        name="toDoIn"
+        v-model="toDoListElem.text"
+        @keyup.enter="addGoal"
+        >
 
-        <button>Submit</button>
+        <button @click="addGoal">Submit</button>
       </div>
       <!-- /Input -->
 
       <!-- Output -->
       <div class="outputs">
         <ul class="list-group">
-          <li>
-            <p class="list-content">content</p>
-            <button class="eliminate"><i class="fa-solid fa-trash"></i></button>
+          <li v-for="(item, index) in ToDoList" :key="index">
+            <p class="list-content">
+              {{ ToDoList[index].text }}
+            </p>
+            <button class="eliminate">
+              <i class="fa-solid fa-trash"></i>
+            </button>
           </li>
         </ul>
       </div>
