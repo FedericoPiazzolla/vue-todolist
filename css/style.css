@@ -68,3 +68,11 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+.message-empty {
+  text-align: center;
+  border: 1px solid blue;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: lightblue;
+}

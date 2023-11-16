@@ -16,17 +16,20 @@ createApp({
   },
   methods: {
     addGoal: function() {
-      this.toDoList.push({...this.toDoListElem});
-      this.toDoListElem.text = "";
+      if(this.toDoListElem.text !== "") {
+        this.toDoList.unshift({...this.toDoListElem});
+        this.toDoListElem.text = "";
+      };
+      
     },
     deleteGoal: function(index) {
       this.toDoList.splice(index, 1);
     },
-    doneOrNotDone: function(index) {
-      if(this.toDoList[index].done === false) {
-        this.toDoList[index].done = true;
+    doneOrNotDone: function(clickedIndex) {
+      if(this.toDoList[clickedIndex].done === false) {
+        this.toDoList[clickedIndex].done = true;
       } else {
-        this.toDoList[index].done = false;
+        this.toDoList[clickedIndex].done = false;
       }
     },
   }

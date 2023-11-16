@@ -29,7 +29,8 @@
             id="toDoIn"
             type="text"
             name="toDoIn"
-            v-model="toDoListElem.text"
+            placeholder="Aggiungi un Todo"
+            v-model.trim="toDoListElem.text"
             @keyup.enter="addGoal" 
           />
 
@@ -39,7 +40,7 @@
 
         <!-- Output -->
         <div class="outputs">
-          <ul class="list-group">
+          <ul class="list-group" v-if="toDoList.length > 0">
             <li v-for="(item, index) in toDoList" :key="index">
               <p
                 class="list-content"
@@ -54,6 +55,9 @@
               </button>
             </li>
           </ul>
+          <div class="message-empty" v-else>
+            HAI COMPLETATO TUTTI I TASK!!!
+          </div>
         </div>
         <!-- /Output -->
       </div>
